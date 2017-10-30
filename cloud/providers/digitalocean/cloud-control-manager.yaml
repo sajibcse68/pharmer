@@ -68,10 +68,11 @@ subjects:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: digitalocean-cloud-controller-manager
+  name: cloud-controller-manager
   namespace: kube-system
 spec:
   replicas: 1
+  revisionHistoryLimit: 2
   template:
     metadata:
       labels:
@@ -98,17 +99,13 @@ spec:
           - "/bin/digitalocean-cloud-controller-manager"
           - "--cloud-provider=digitalocean"
           - "--leader-elect=false"
-          - "--kubeconfig=/etc/kubernetes/admin.conf"
-        volumeMounts:
-        - mountPath: /etc/kubernetes
-          name: k8s
+        resources:
+          requests:
+            cpu: 100m
+            memory: 50Mi
         env:
           - name: DO_ACCESS_TOKEN
             valueFrom:
               secretKeyRef:
                 name: digitalocean
-                key: token
-      volumes:
-      - name: k8s
-        hostPath:
-          path: /etc/kubernetes
+                key: access-token

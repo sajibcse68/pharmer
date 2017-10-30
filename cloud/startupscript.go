@@ -140,7 +140,7 @@ systemctl start docker
 
 cat > /etc/systemd/system/kubelet.service.d/20-pharmer.conf <<EOF
 [Service]
-Environment="KUBELET_EXTRA_ARGS={{ if .ExternalProvider }}{{ .KubeletExtraArgsWithoutCloudProviderStr }}{{ else }}{{ .KubeletExtraArgsStr }}{{ end }}"
+Environment="KUBELET_EXTRA_ARGS={{ .KubeletExtraArgsStr }}"
 EOF
 
 systemctl daemon-reload
@@ -266,30 +266,30 @@ chmod 600 /etc/kubernetes/pki/ca.key /etc/kubernetes/pki/front-proxy-ca.key
 `))
 
 	_ = template.Must(StartupScriptTemplate.New("ccm").Parse(`
-until [ $(kubectl get pods -n kube-system -l k8s-app=kube-dns -o jsonpath='{.items[0].status.phase}' --kubeconfig /etc/kubernetes/admin.conf) == "Running" ]
-do
-   echo '.'
-   sleep 5
-done
-
+# kubectl taint nodes ${NODE_NAME} node.cloudprovider.kubernetes.io/uninitialized=true:NoSchedule --kubeconfig /etc/kubernetes/admin.conf
 kubectl apply -f "https://raw.githubusercontent.com/appscode/pharmer/master/cloud/providers/{{ .Provider }}/cloud-control-manager.yaml" --kubeconfig /etc/kubernetes/admin.conf
 
-until [ $(kubectl get pods -n kube-system -l app=cloud-controller-manager -o jsonpath='{.items[0].status.phase}' --kubeconfig /etc/kubernetes/admin.conf) == "Running" ]
-do
-   echo '.'
-   sleep 5
-done
+#until [ $(kubectl get pods -n kube-system -l k8s-app=kube-dns -o jsonpath='{.items[0].status.phase}' --kubeconfig /etc/kubernetes/admin.conf) == "Running" ]
+#do
+#   echo '.'
+#   sleep 5
+#done
 
-cat > /etc/systemd/system/kubelet.service.d/20-pharmer.conf <<EOF
-[Service]
-Environment="KUBELET_EXTRA_ARGS={{ .KubeletExtraArgsStr }}"
-EOF
+#until [ $(kubectl get pods -n kube-system -l app=cloud-controller-manager -o jsonpath='{.items[0].status.phase}' --kubeconfig /etc/kubernetes/admin.conf) == "Running" ]
+#do
+#   echo '.'
+#   sleep 5
+#done
 
-NODE_NAME=$(uname -n)
-kubectl taint nodes ${NODE_NAME} node.cloudprovider.kubernetes.io/uninitialized=true:NoSchedule --kubeconfig /etc/kubernetes/admin.conf
+#cat > /etc/systemd/system/kubelet.service.d/20-pharmer.conf <<EOF
+#[Service]
+#Environment="KUBELET_EXTRA_ARGS={{ .KubeletExtraArgsStr }}"
+#EOF
 
-systemctl daemon-reload
-systemctl restart kubelet
+#NODE_NAME=$(uname -n)
+
+#systemctl daemon-reload
+#systemctl restart kubelet
 
 # sleep 10
 # reboot
