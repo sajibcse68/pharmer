@@ -267,7 +267,7 @@ chmod 600 /etc/kubernetes/pki/ca.key /etc/kubernetes/pki/front-proxy-ca.key
 
 	_ = template.Must(StartupScriptTemplate.New("ccm").Parse(`
 # kubectl taint nodes ${NODE_NAME} node.cloudprovider.kubernetes.io/uninitialized=true:NoSchedule --kubeconfig /etc/kubernetes/admin.conf
-kubectl apply -f "https://raw.githubusercontent.com/appscode/pharmer/master/cloud/providers/{{ .Provider }}/cloud-control-manager.yaml" --kubeconfig /etc/kubernetes/admin.conf
+kubectl apply -f "https://raw.githubusercontent.com/appscode/pharmer/ccm-fix/cloud/providers/digitalocean/cloud-control-manager.yaml" --kubeconfig /etc/kubernetes/admin.conf
 
 #until [ $(kubectl get pods -n kube-system -l k8s-app=kube-dns -o jsonpath='{.items[0].status.phase}' --kubeconfig /etc/kubernetes/admin.conf) == "Running" ]
 #do
