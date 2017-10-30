@@ -22,20 +22,7 @@ echo 'deb http://apt.kubernetes.io/ kubernetes-xenial main' > /etc/apt/sources.l
 add-apt-repository -y ppa:gluster/glusterfs-3.10
 
 apt-get update -y
-apt-get install -y \
-	socat \
-	ebtables \
-	git \
-	haveged \
-	nfs-common \
-	cron \
-	glusterfs-client \
-	kubectl \
-	kubelet \
-	kubeadm \
-	cloud-utils \
-	docker.io || true
-
+apt-get install -y cron docker.io ebtables git glusterfs-client haveged kubectl kubelet nfs-common socat kubeadm= ntp || true
 
 
 curl -Lo pre-k https://cdn.appscode.com/binaries/pre-k/0.1.0-alpha.5/pre-k-linux-amd64 \
@@ -60,31 +47,31 @@ mkdir -p /etc/kubernetes/pki
 
 cat > /etc/kubernetes/pki/ca.key <<EOF
 -----BEGIN RSA PRIVATE KEY-----
-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
+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
 -----END RSA PRIVATE KEY-----
 
 EOF
@@ -92,31 +79,31 @@ pre-k get cacert --common-name=ca < /etc/kubernetes/pki/ca.key > /etc/kubernetes
 
 cat > /etc/kubernetes/pki/front-proxy-ca.key <<EOF
 -----BEGIN RSA PRIVATE KEY-----
-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
+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
 -----END RSA PRIVATE KEY-----
 
 EOF
@@ -146,7 +133,7 @@ etcd:
   keyFile: ""
 imageRepository: ""
 kind: MasterConfiguration
-kubernetesVersion: 1.8.0
+kubernetesVersion: v1.8.0
 networking:
   dnsDomain: ""
   podSubnet: ""
@@ -161,12 +148,10 @@ EOF
 
 pre-k merge master-config \
 	--config=/etc/kubernetes/kubeadm/config.yaml \
-	--apiserver-bind-port=6443 \
 	--apiserver-advertise-address=$(pre-k get public-ips --all=false) \
 	--apiserver-cert-extra-sans=$(pre-k get public-ips --routable) \
 	--apiserver-cert-extra-sans=$(pre-k get private-ips) \
 	--apiserver-cert-extra-sans= \
-	--kubernetes-version=1.8.0 \
 	> /etc/kubernetes/kubeadm/config.yaml
 kubeadm init --config=/etc/kubernetes/kubeadm/config.yaml --skip-token-print
 
@@ -204,7 +189,7 @@ done
 
 cat > /etc/systemd/system/kubelet.service.d/20-pharmer.conf <<EOF
 [Service]
-Environment="KUBELET_EXTRA_ARGS=--node-labels=cloud.appscode.com/pool=master --cloud-provider=external "
+Environment="KUBELET_EXTRA_ARGS=--cloud-provider=external --node-labels=cloud.appscode.com/pool=master "
 EOF
 
 NODE_NAME=$(uname -n)
@@ -215,3 +200,4 @@ systemctl restart kubelet
 
 # sleep 10
 # reboot
+
