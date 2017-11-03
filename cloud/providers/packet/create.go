@@ -84,7 +84,6 @@ func (cm *ClusterManager) SetDefaults(cluster *api.Cluster) error {
 		Phase:            api.ClusterPending,
 		SSHKeyExternalID: n.GenSSHKeyExternalID(),
 	}
-	cluster.Spec.Networking.NonMasqueradeCIDR = "10.0.0.0/8"
 
 	return nil
 }

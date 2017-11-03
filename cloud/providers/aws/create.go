@@ -64,8 +64,6 @@ func (cm *ClusterManager) SetDefaults(cluster *api.Cluster) error {
 	cluster.Spec.Cloud.AWS.MasterIPSuffix = ".9"
 	cluster.Spec.Cloud.AWS.VpcCIDR = "172.20.0.0/16"
 	cluster.Spec.Cloud.AWS.SubnetCIDR = "172.20.0.0/24"
-	cluster.Spec.Networking.MasterSubnet = "10.246.0.0/24"
-	cluster.Spec.Networking.NonMasqueradeCIDR = "10.0.0.0/8"
 	cluster.Spec.API.BindPort = kubeadmapi.DefaultAPIBindPort
 	if len(cluster.Spec.AuthorizationModes) == 0 {
 		cluster.Spec.AuthorizationModes = strings.Split(kubeadmapi.DefaultAuthorizationModes, ",")

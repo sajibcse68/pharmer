@@ -79,8 +79,6 @@ func (cm *ClusterManager) SetDefaults(cluster *api.Cluster) error {
 		SSHKeyExternalID: n.GenSSHKeyExternalID(),
 	}
 
-	cluster.Spec.Networking.NonMasqueradeCIDR = "10.0.0.0/8"
-
 	return nil
 }
 

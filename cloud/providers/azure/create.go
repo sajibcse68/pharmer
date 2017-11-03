@@ -57,7 +57,6 @@ func (cm *ClusterManager) SetDefaults(cluster *api.Cluster) error {
 		cluster.Spec.Cloud.Azure = &api.AzureSpec{}
 	}
 
-	cluster.Spec.Networking.NonMasqueradeCIDR = "10.0.0.0/8"
 	cluster.Spec.API.BindPort = kubeadmapi.DefaultAPIBindPort
 	if len(cluster.Spec.AuthorizationModes) == 0 {
 		cluster.Spec.AuthorizationModes = strings.Split(kubeadmapi.DefaultAuthorizationModes, ",")

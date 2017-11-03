@@ -84,12 +84,6 @@ type Networking struct {
 
 	ServiceSubnet string `json:"serviceSubnet,omitempty" protobuf:"bytes,2,opt,name=serviceSubnet"`
 	DNSDomain     string `json:"dnsDomain,omitempty" protobuf:"bytes,3,opt,name=dnsDomain"`
-
-	// NEW
-	// Replacing API_SERVERS https://github.com/kubernetes/kubernetes/blob/62898319dff291843e53b7839c6cde14ee5d2aa4/cluster/aws/util.sh#L1004
-	DNSServerIP       string `json:"dnsServerIP,omitempty" protobuf:"bytes,5,opt,name=dnsServerIP"`
-	NonMasqueradeCIDR string `json:"nonMasqueradeCIDR,omitempty" protobuf:"bytes,6,opt,name=nonMasqueradeCIDR"`
-	MasterSubnet      string `json:"masterSubnet,omitempty" protobuf:"bytes,7,opt,name=masterSubnet"` // delete ?
 }
 
 func (n *Networking) SetDefaults() {
