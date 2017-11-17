@@ -1,0 +1,486 @@
+{
+	"variables": [],
+	"info": {
+		"name": "pharmer",
+		"_postman_id": "f49d47a5-87b9-a9c6-3d67-2349b751aeaa",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "credential",
+			"description": "",
+			"item": [
+				{
+					"name": "http://localhost:9877/_appscode/api/kubernetes/v1beta1/credentials/json",
+					"request": {
+						"url": "http://localhost:9877/_appscode/api/cluster/v1alpha1/credentials/json",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer qacode:api-sqssy4j66ww2753iijybhkiyzaqf",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"credential\":{\n      \"kind\":\"Credential\",\n      \"apiVersion\":\"v1alpha1\",\n      \"metadata\":{\n         \"name\":\"do\",\n         \"creationTimestamp\": \"2017-11-15T09:11:52Z\"\n      },\n      \"spec\":{\n         \"provider\":\"DigitalOcean\",\n         \"data\":{\n            \"token\":\"testcredential\"\n         }\n      }\n   }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9877/_appscode/api/kubernetes/v1beta1/credentials/json",
+					"request": {
+						"url": "http://localhost:9877/_appscode/api/cluster/v1alpha1/credentials/do/json",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer qacode:api-sqssy4j66ww2753iijybhkiyzaqf",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"credential\":{\n      \"kind\":\"Credential\",\n      \"apiVersion\":\"v1alpha1\",\n      \"metadata\":{\n         \"name\":\"do\",\n         \"creationTimestamp\": \"2017-11-15T09:11:52Z\"\n      },\n      \"spec\":{\n         \"provider\":\"DigitalOcean\",\n         \"data\":{\n            \"token\":\"testcredential\"\n         }\n      }\n   }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9877/_appscode/api/kubernetes/v1beta1/credentials/json",
+					"request": {
+						"url": "http://localhost:9877/_appscode/api/cluster/v1alpha1/credentials/do/json",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer qacode:api-sqssy4j66ww2753iijybhkiyzaqf",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"credential\":{\n      \"kind\":\"Credential\",\n      \"apiVersion\":\"v1alpha1\",\n      \"metadata\":{\n         \"name\":\"do\",\n         \"creationTimestamp\": \"2017-11-15T09:11:52Z\"\n      },\n      \"spec\":{\n         \"provider\":\"DigitalOcean\",\n         \"data\":{\n            \"token\":\"abcd\"\n         }\n      }\n   }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9877/_appscode/api/kubernetes/v1beta1/credentials/json",
+					"request": {
+						"url": "http://localhost:9877/_appscode/api/cluster/v1alpha1/credentials/do/json",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer qacode:api-sqssy4j66ww2753iijybhkiyzaqf",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9877/_appscode/api/kubernetes/v1beta1/credentials/json",
+					"request": {
+						"url": "http://localhost:9877/_appscode/api/cluster/v1alpha1/credentials/json",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer qacode:api-sqssy4j66ww2753iijybhkiyzaqf",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"credential\":{\n      \"kind\":\"Credential\",\n      \"apiVersion\":\"v1alpha1\",\n      \"metadata\":{\n         \"name\":\"do2\",\n         \"creationTimestamp\": \"2017-11-15T09:11:52Z\"\n      },\n      \"spec\":{\n         \"provider\":\"DigitalOcean\",\n         \"data\":{\n            \"token\":\"testcredential\"\n         }\n      }\n   }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cluster",
+			"description": "",
+			"item": [
+				{
+					"name": "http://localhost:9877/_appscode/api/kubernetes/v1beta1/credentials/json",
+					"request": {
+						"url": "http://localhost:9877/_appscode/api/cluster/v1alpha1/clusters/json",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer qacode:api-sqssy4j66ww2753iijybhkiyzaqf",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"cluster\":{\n      \"kind\":\"Cluster\",\n      \"apiVersion\":\"v1alpha1\",\n      \"metadata\":{\n         \"name\":\"do2\",\n         \"creationTimestamp\": \"2017-11-15T09:11:52Z\"\n      },\n      \"spec\":{\n      \t\"cloud\": {\n         \"cloudProvider\":\"digitalocean\",\n         \"zone\": \"nyc3\"\n      \t},\n        \"credentialName\": \"do\",\n        \"kubernetesVersion\": \"v1.8.0\"\n      }\n   }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9877/_appscode/api/kubernetes/v1beta1/credentials/json",
+					"request": {
+						"url": "http://localhost:9877/_appscode/api/cluster/v1alpha1/clusters/json",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer qacode:api-sqssy4j66ww2753iijybhkiyzaqf",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"cluster\":{\n      \"kind\":\"Cluster\",\n      \"apiVersion\":\"v1alpha1\",\n      \"metadata\":{\n         \"name\":\"do1\",\n         \"creationTimestamp\": \"2017-11-15T09:11:52Z\"\n      },\n      \"spec\":{\n      \t\"cloud\": {\n         \"cloudProvider\":\"digitalocean\",\n         \"zone\": \"nyc3\"\n      \t},\n        \"credentialName\": \"do\",\n        \"kubernetesVersion\": \"v1.8.0\"\n      }\n   }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9877/_appscode/api/kubernetes/v1beta1/credentials/json",
+					"request": {
+						"url": "http://localhost:9877/_appscode/api/cluster/v1alpha1/clusters/do1/json",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer qacode:api-sqssy4j66ww2753iijybhkiyzaqf",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9877/_appscode/api/kubernetes/v1beta1/credentials/json",
+					"request": {
+						"url": "http://localhost:9877/_appscode/api/cluster/v1alpha1/clusters/do2/json",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer qacode:api-sqssy4j66ww2753iijybhkiyzaqf",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cluster\": {\n        \"TypeMeta\": {},\n        \"metadata\": {\n            \"name\": \"do2\",\n            \"uid\": \"569eb3fa-caa5-11e7-871e-382c4a73a7c4\",\n            \"generation\": \"1510819712974548206\",\n            \"creationTimestamp\": \"2017-11-16T08:08:32Z\"\n        },\n        \"spec\": {\n            \"cloud\": {\n                \"cloudProvider\": \"digitalocean\",\n                \"region\": \"nyc3\",\n                \"zone\": \"nyc3\",\n                \"instanceImage\": \"ubuntu-16-04-x64\"\n            },\n            \"api\": {\n                \"bindPort\": 6443\n            },\n            \"networking\": {\n                \"networkProvider\": \"calico\",\n                \"podSubnet\": \"192.168.0.0/16\",\n                \"serviceSubnet\": \"10.96.0.0/12\",\n                \"dnsDomain\": \"cluster.local\"\n            },\n            \"kubernetesVersion\": \"v1.8.1\",\n            \"caCertName\": \"ca\",\n            \"frontProxyCACertName\": \"front-proxy-ca\",\n            \"credentialName\": \"do\",\n            \"apiServerExtraArgs\": {\n                \"kubelet-preferred-address-types\": \"InternalIP,ExternalIP\"\n            },\n            \"authorizationModes\": [\n                \"Node\",\n                \"RBAC\"\n            ]\n        },\n        \"status\": {\n            \"phase\": \"Pending\",\n            \"sshKeyExternalID\": \"do2-p625eb\",\n            \"cloud\": {}\n        }\n    }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9877/_appscode/api/kubernetes/v1beta1/credentials/json",
+					"request": {
+						"url": "http://localhost:9877/_appscode/api/cluster/v1alpha1/clusters/do2/json",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer qacode:api-sqssy4j66ww2753iijybhkiyzaqf",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"cluster\":{\n      \"kind\":\"Cluster\",\n      \"apiVersion\":\"v1alpha1\",\n      \"metadata\":{\n         \"name\":\"do1\",\n         \"creationTimestamp\": \"2017-11-15T09:11:52Z\"\n      },\n      \"spec\":{\n      \t\"cloud\": {\n         \"cloudProvider\":\"digitalocean\",\n         \"zone\": \"nyc3\"\n      \t},\n        \"credentialName\": \"do\",\n        \"kubernetesVersion\": \"v1.8.0\"\n      }\n   }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9877/_appscode/api/kubernetes/v1beta1/credentials/json",
+					"request": {
+						"url": "http://localhost:9877/_appscode/api/cluster/v1alpha1/clusters/do4/actions/apply/json",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer qacode:api-sqssy4j66ww2753iijybhkiyzaqf",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"do4\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "nodegroup",
+			"description": "",
+			"item": [
+				{
+					"name": "http://localhost:9877/_appscode/api/kubernetes/v1beta1/credentials/json",
+					"request": {
+						"url": "http://localhost:9877/_appscode/api/cluster/v1alpha1/clusters/do2/nodegroups/json",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer qacode:api-sqssy4j66ww2753iijybhkiyzaqf",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"nodeGroup\":{\n      \"kind\":\"NodeGroup\",\n      \"apiVersion\":\"v1alpha1\",\n      \"metadata\":{\n         \"clusterName\":\"do2\",\n         \"creationTimestamp\": \"2017-11-15T09:11:52Z\"\n      },\n      \"spec\":{\n      \t\"template\": {\n         \"spec\": {\n         \t\"sku\": \"2gb\"\n         }\n      \t},\n        \"nodes\": 1\n      }\n   }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9877/_appscode/api/kubernetes/v1beta1/credentials/json",
+					"request": {
+						"url": "http://localhost:9877/_appscode/api/cluster/v1alpha1/clusters/do2/nodegroups/json",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer qacode:api-sqssy4j66ww2753iijybhkiyzaqf",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"nodeGroup\":{\n      \"kind\":\"NodeGroup\",\n      \"apiVersion\":\"v1alpha1\",\n      \"metadata\":{\n         \"clusterName\":\"do2\",\n         \"creationTimestamp\": \"2017-11-15T09:11:52Z\"\n      },\n      \"spec\":{\n      \t\"template\": {\n         \"spec\": {\n         \t\"sku\": \"2gb\"\n         }\n      \t},\n        \"nodes\": 1\n      }\n   }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9877/_appscode/api/kubernetes/v1beta1/credentials/json",
+					"request": {
+						"url": "http://localhost:9877/_appscode/api/cluster/v1alpha1/clusters/do2/nodegroups/2gb-pool/json",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer qacode:api-sqssy4j66ww2753iijybhkiyzaqf",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"nodeGroup\":{\n      \"kind\":\"NodeGroup\",\n      \"apiVersion\":\"v1alpha1\",\n      \"metadata\":{\n         \"clusterName\":\"do2\",\n         \"creationTimestamp\": \"2017-11-15T09:11:52Z\"\n      },\n      \"spec\":{\n      \t\"template\": {\n         \"spec\": {\n         \t\"sku\": \"2gb\"\n         }\n      \t},\n        \"nodes\": 1\n      }\n   }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9877/_appscode/api/kubernetes/v1beta1/credentials/json",
+					"request": {
+						"url": "http://localhost:9877/_appscode/api/cluster/v1alpha1/clusters/do2/nodegroups/2gb-pool/json",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer qacode:api-sqssy4j66ww2753iijybhkiyzaqf",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nodeGroup\": {\n        \"metadata\": {\n            \"name\": \"2gb-pool\",\n            \"uid\": \"dca3f435-caa7-11e7-b782-382c4a73a7c4\",\n            \"creationTimestamp\": \"2017-11-15T09:11:52Z\",\n            \"labels\": {\n                \"node-role.kubernetes.io/node\": \"\"\n            },\n            \"clusterName\": \"do2\"\n        },\n        \"spec\": {\n            \"nodes\": \"2\",\n            \"template\": {\n                \"spec\": {\n                    \"sku\": \"2gb\"\n                }\n            }\n        }\n    }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9877/_appscode/api/kubernetes/v1beta1/credentials/json",
+					"request": {
+						"url": "http://localhost:9877/_appscode/api/cluster/v1alpha1/clusters/do8/nodegroups/2gb-pool/json",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer qacode:api-sqssy4j66ww2753iijybhkiyzaqf",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sshconfig",
+			"description": "",
+			"item": [
+				{
+					"name": "http://localhost:9877/_appscode/api/kubernetes/v1beta1/credentials/json",
+					"request": {
+						"url": {
+							"raw": "http://localhost:9877/_appscode/api/cluster/v1alpha1/clusters/do8/ssh/json?clusterName=do8&nodeName=do8-master",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9877",
+							"path": [
+								"_appscode",
+								"api",
+								"cluster",
+								"v1alpha1",
+								"clusters",
+								"do8",
+								"ssh",
+								"json"
+							],
+							"query": [
+								{
+									"key": "clusterName",
+									"value": "do8",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "nodeName",
+									"value": "do8-master",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer qacode:api-sqssy4j66ww2753iijybhkiyzaqf",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"nodeGroup\":{\n      \"kind\":\"NodeGroup\",\n      \"apiVersion\":\"v1alpha1\",\n      \"metadata\":{\n         \"clusterName\":\"do2\",\n         \"creationTimestamp\": \"2017-11-15T09:11:52Z\"\n      },\n      \"spec\":{\n      \t\"template\": {\n         \"spec\": {\n         \t\"sku\": \"2gb\"\n         }\n      \t},\n        \"nodes\": 1\n      }\n   }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
