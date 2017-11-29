@@ -5,6 +5,6 @@ menu:
     identifier: linode
     name: Linode
     parent: cloud
-    weight: 5
+    weight: 30
 left_menu: product_pharmer_0.2.0 
 ---
