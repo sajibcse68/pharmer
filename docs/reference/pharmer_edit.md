@@ -1,12 +1,12 @@
 ---
 title: Pharmer Edit
 menu:
-  product_pharmer_0.1.0-alpha.1:
+  product_pharmer_0.2.0:
     identifier: pharmer-edit
     name: Pharmer Edit
     parent: reference
 product_name: pharmer
-left_menu: product_pharmer_0.1.0-alpha.1
+left_menu: product_pharmer_0.2.0
 section_menu_id: reference
 ---
 ## pharmer edit
